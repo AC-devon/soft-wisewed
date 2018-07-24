@@ -1,12 +1,16 @@
-import Firebase from 'firebase'
-var config = {
-    apiKey: "AIzaSyCv3ZaODIeBTgAnsaKayWO-MdJVRQG4UKQ",
-    authDomain: "pizza-planet-a3107.firebaseapp.com",
-    databaseURL: "https://pizza-planet-a3107.firebaseio.com",
-    projectId: "pizza-planet-a3107",
-    storageBucket: "pizza-planet-a3107.appspot.com",
-    messagingSenderId: "634782312980"
-  };
-  const firebaseApp = Firebase.initializeApp(config);
-  const db  = firebaseApp.database()
-  export const dbMenuRef = db.ref('menu')
+import { initializeApp } from 'firebase'
+
+  // Initialize Firebase
+
+  const app = initializeApp({
+    apiKey: "AIzaSyBaY7Nzq-MVqpUtwOSEWXnGyaDopWe8gO4",
+    authDomain: "soft-wisewed.firebaseapp.com",
+    databaseURL: "https://soft-wisewed.firebaseio.com",
+    projectId: "soft-wisewed",
+    storageBucket: "soft-wisewed.appspot.com",
+    messagingSenderId: "381874883266"
+  });
+
+  export const auth  = app.auth()
+  export const db  = app.database()
+  export const dbSuppliersRef = db.ref('supplier')

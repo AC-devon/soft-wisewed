@@ -101,11 +101,16 @@
 
 <script>
 import Popup from '../components/Popup.vue'
+import { dbSuppliersRef } from '../firebaseConfig'
+
 export default {
   components:{
     Popup
   },
   props: ["userName", "weddingDate"],
+  firebase:{
+    weddingProp: dbSuppliersRef
+  },
   data() {
     return {
       // תאורה הגברה ואקום & כמות מוזמנים
@@ -115,78 +120,7 @@ export default {
       progress: 0,
       textProgress: "הופה מתחילים",
       weddingPosition: 0,
-      weddingProp: [
-        {
-          kind: "מחיר מנה",
-          min: 180,
-          max: 400,
-          tip: "טיפ למחר מנה",
-          rangeVal: 0,
-          class: "fa-utensils",
-          contract: null,
-          pipe: 5
-        },
-        {
-          kind: "עיצוב האולם",
-          min: 2000,
-          max: 7000,
-          tip: "טיפ לעיצוב אולם",
-          rangeVal: 0,
-          class: "fa-award",
-          contract: null,
-          pipe: 100
-        },
-        {
-          kind: "צלם אירועים",
-          min: 2500,
-          max: 10000,
-          tip: "טיפ לצלם אירועים",
-          rangeVal: 0,
-          class: "fa-video",
-          contract: null,
-          pipe: 100
-        },
-        {
-          kind: "מגנטים",
-          min: 1000,
-          max: 2000,
-          tip: "טיפ למגנטים",
-          rangeVal: 0,
-          class: "fa-magnet",
-          contract: null,
-          pipe: 50
-        },
-        {
-          kind: "דיג'י",
-          min: 3000,
-          max: 8000,
-          tip: "טיפ לדיגי",
-          rangeVal: 0,
-          class: "fa-music",
-          contract: null,
-          pipe: 100
-        },
-        {
-          kind: "אישורי השתתפות",
-          min: 200,
-          max: 800,
-          tip: "טיפ לאישורי השתתפות",
-          rangeVal: 0,
-          class: "fa-envelope",
-          contract: null,
-          pipe: 50
-        },
-        {
-          kind: "אטרקציות וגימיקים",
-          min: 1000,
-          max: 2000,
-          tip: "אטרקציות וגימיקים",
-          rangeVal: 0,
-          class: "fa-hand-scissors",
-          contract: null,
-          pipe: 100
-        }
-      ]
+   
     };
   },
   methods: {
